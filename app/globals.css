@@ -5,11 +5,37 @@
   --foreground: #171717;
 }
 
+@layer base {
+  input,
+  textarea {
+    @apply border rounded-sm p-2;
+  }
+}
+
+@layer components {
+  .nav {
+    .nav__link {
+      @apply px-2 py-1;
+    }
+
+    .nav__link:hover,
+    .nav__link--active {
+      text-decoration: none;
+      @apply rounded-sm text-white bg-primary;
+    }
+  }
+}
+
 @theme inline {
+  --color-primary: #0ac5b2;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+}
+
+@utility fit-content {
+  width: fit-content;
 }
 
 @media (prefers-color-scheme: dark) {
